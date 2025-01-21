@@ -1,4 +1,67 @@
 *{
     padding: 0em;
     margin: 0em;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+
+body{
+    background-color: rgb(22, 22, 22);
+    color: white;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+/* HEADER */
+
+header{
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+}
+
+/*TODO: arreglar este estilo*/
+header nav{
+    size: 60%;
+    display: flex;
+    justify-content: space-between;
+    gap: 1em;
+}
+
+
+/*GALLERY*/
+
+
+.gallery{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 1em;
+    padding: 1em
+}
+
+.gallery-item{
+    background-color: rgba(0, 0, 0, 0.715);
+    border-radius: 0.5em;
+    overflow: hidden;
+}
+
+.gallery-item:hover{
+    background-color: rgb(38, 36, 59);
+    box-shadow: 10px 10px 10px black;
+    transform: scale(1.05);
+    transition: all 0.5s;
+}
+
+.gallery img {
+    max-width: 100%;
+    height: auto;
+}
+
+.gallery-item .info{
+    padding: 1em;
+}
+
+/*TODO: add responsive*/
