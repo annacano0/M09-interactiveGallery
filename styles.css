@@ -21,12 +21,18 @@ a:hover {
   transition: all 0.5s;
 }
 /* HEADER */
-/*TODO: arreglar este estilo*/
 
 header {
+  position: sticky;
+  background-color: rgb(44, 44, 44);
+  box-shadow: 2.5px 2.5px 10px black;
+
+  z-index: 10;
+  top: 0;
+  margin-bottom: 1em;
   padding: 1em;
   display: grid;
-  grid-template-columns: 4em 1fr;
+  grid-template-columns: 1fr 3fr;
   grid-template-rows: 1fr;
   gap: 1em;
 }
@@ -36,9 +42,8 @@ header nav {
   grid-template-columns: 1fr 1fr 1fr;
   gap: 1em;
 }
-
-header h1 {
-  size: 40%;
+header nav a{
+  margin: auto;
 }
 
 /*GALLERY*/
@@ -75,6 +80,22 @@ header h1 {
   padding: 1em;
 }
 
+/*FOOTER*/
+
+footer{
+  margin: auto;
+  justify-content: center;
+}
+footer p{
+  text-align: center;
+}
+
+footer div{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 1em;
+}
+
 /*flip card and hidden text settings*/
 
 .gallery-item {
@@ -83,15 +104,20 @@ header h1 {
 
 .view-more {
   position: absolute;
-  top: 5%;
-  left: 10%;
-  z-index: +10;
-  transition: all 0.5s;
-  display: hidden;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 0.5em 1em;
+  border-radius: 0.5em;
+  opacity: 0;
+  transition: opacity 0.5s, transform 0.5s;
 }
 
-.view-more:hover {
-  display: inline;
+.gallery-item:hover .view-more {
+  opacity: 1;
+  transform: translate(-50%, -60%);
 }
 
 /*tablet settings*/
@@ -100,10 +126,28 @@ header h1 {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
   }
+
+  footer div{
+    display: grid;
+    grid-template-columns: 1fr ;
+    gap: 0.5em;
+  }
 }
 
 /*phone settings*/
 @media (max-width: 480px) {
+  footer div{
+    display: grid;
+    grid-template-columns: 1fr ;
+    gap: 0.5em;
+  }
+
+  header{
+    grid-template-columns: 1fr;
+  }
+  header h1{
+    margin: auto;
+  }
   .gallery {
     grid-template-columns: 1fr;
     grid-template-rows: auto;
